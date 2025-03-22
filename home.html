@@ -25,6 +25,8 @@
                 {
                     const country=document.getElementById('Country');
                     const selectedCountry=country.value;
+                    messageBox.textContent = "";
+                    messageBox.style.display = "none";
                     if(selectedCountry==="")
                     {
                         messageBox.textContent="Please Select a Country!";
