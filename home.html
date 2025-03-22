@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="stylesheet.css">
+        <title>VISA Check</title>
+    </head>
+    <body>
+        <div class="select-box">
+            <h1>Check the VISA Requirement of a Country</h1>
+            <form id="countryVisa">
+                <select id="Country" name="Country">
+                    <option value="" disabled selected>Select a country</option>
+                    <option value="Country1">The United States of America</option>
+                    <option value="Country2">Canada</option>
+                    <option value="Country3">India</option>
+                    <option value="Country4">The United Kingdom</option>
+                    <option value="Country5">Australia</option>
+                </select><br><br>
+                <button type="submit">Check VISA</button>
+                <div id="visaMessage"></div>
+            </form>
+            <script>
+                const form=document.getElementById('countryVisa');
+                const messageBox=document.getElementById('visaMessage');
+                form.addEventListener('submit', function(event)
+                {
+                    const country=document.getElementById('Country');
+                    const selectedCountry=country.value;
+                    if(selectedCountry==="")
+                    {
+                        messageBox.textContent="Please Select a Country!";
+                        messageBox.style.display = "block";
+                        event.preventDefault();
+                    }
+                    if(selectedCountry==="Country1")
+                    {
+                        alert("Visa required for most applicants.")
+                    }
+                    if(selectedCountry==="Country2")
+                    {
+                        alert("Visa required unless you have an eTA.")
+                    }
+                    if(selectedCountry==="Country3")
+                    {
+                        alert("Visa required before travel.")
+                    }
+                    if(selectedCountry==="Country4")
+                    {
+                        alert("Visa depends on the duration of stay.")
+                    }
+                    if(selectedCountry==="Country5")
+                    {
+                        alert("eVisa available for eligible travelers.")
+                    }
+                });
+            </script>
+        </div>
+    </body>
+</html>
