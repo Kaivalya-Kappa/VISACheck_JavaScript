@@ -23,6 +23,7 @@
                 const messageBox=document.getElementById('visaMessage');
                 form.addEventListener('submit', function(event)
                 {
+                    event.preventDefault();
                     const country=document.getElementById('Country');
                     const selectedCountry=country.value;
                     messageBox.textContent = "";
@@ -31,7 +32,6 @@
                     {
                         messageBox.textContent="Please Select a Country!";
                         messageBox.style.display = "block";
-                        event.preventDefault();
                         return;
                     }
                     if(selectedCountry==="Country1")
